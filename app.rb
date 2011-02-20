@@ -4,7 +4,7 @@ settings = YAML::load(File.read(File.dirname(__FILE__) + '/config.yml'))
 
 user = Tumblr::User.new(settings['email'], settings['password'])
 
-Tumblr.blog = '1week1project'
+Tumblr.blog = settings['website']
 
 posts = Tumblr::Post.all(:tagged => 'week-25')
 
